@@ -11,4 +11,6 @@ const element = (
   </div>
 );
 
+// console.log(element)
+
 ReactDOM.render(element, rootElement);

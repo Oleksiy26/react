@@ -5,7 +5,8 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'review_build'),
+    filename: 'main.js',
+    path: path.join(__dirname, 'review_build'),
   },
   module: {
     rules: [
