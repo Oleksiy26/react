@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import './styles.css';
 
 const rootElement = document.querySelector('#root');
@@ -7,8 +7,8 @@ const rootElement = document.querySelector('#root');
 const element = (
   <div className="greeting">
     <div className="greeting__title">Hello, world!</div>
-    <div className="greeting__text">I am learning React</div>
+    <div className="greeting__text">I&#39;m learning React</div>
   </div>
 );
 
-ReactDom.render(element, rootElement);
+ReactDOM.render(element, rootElement);
