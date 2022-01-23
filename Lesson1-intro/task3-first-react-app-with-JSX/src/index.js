@@ -8,6 +8,7 @@ const element = (
   <div className="greeting">
     <div className="greeting__title">Hello, world!</div>
     <div className="greeting__text">I&#39;m learning React</div>
+    <div className="greeting__text">I&#39;m learning React</div>
   </div>
 );
 
