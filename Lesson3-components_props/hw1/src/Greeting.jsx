@@ -8,7 +8,7 @@ function Greeting(props) {
   return (
     <div className="greeting">{`My name is ${firstName} ${lastName}. I'm ${age(
       birthDate,
-    )} years old `}</div>
+    )} years old`}</div>
   );
 }
 
