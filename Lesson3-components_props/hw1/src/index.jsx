@@ -5,10 +5,7 @@ import Greeting from './Greeting.jsx';
 
 const rootElement = document.querySelector('#root');
 
-const userInfo = {
-  firstName: 'John',
-  lastName: 'Doe',
-  birthDate: new Date('2005-01-01T11:11:11.819Z'),
-};
-
-ReactDOM.render(<Greeting user={userInfo} />, rootElement);
+ReactDOM.render(
+  <Greeting firstName="John" lastName="Doe" birthDate={new Date('2005-01-01T11:11:11.819Z')} />,
+  rootElement,
+);
