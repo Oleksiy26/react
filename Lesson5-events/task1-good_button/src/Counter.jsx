@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GoodButton = () => (
+const Counter = () => (
   <div
     className="fancy-button"
     onClick={() => {
@@ -10,4 +10,4 @@ const GoodButton = () => (
     Click me!
   </div>
 );
-export default GoodButton;
+export default Counter;
