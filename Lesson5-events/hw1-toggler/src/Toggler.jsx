@@ -13,7 +13,7 @@ class Toggler extends React.Component {
   toggleBtnText = () => {
     this.setState({
       flag: !this.state.flag,
-      btnText: !this.state.flag ? 'On' : 'Off',
+      btnText: !this.state.flag ? 'Off' : 'On',
     });
   };
 
