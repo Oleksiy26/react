@@ -1,3 +1,7 @@
+// 1. Задаем начальное состояние кнопки и активирована не активирована
+//  текст кнопки Off значит кнопка activeted true
+// 2. в обработчике меняем значения на противоположенные On и false соответственно
+
 import React from 'react';
 
 class Toggler extends React.Component {
@@ -6,14 +10,14 @@ class Toggler extends React.Component {
 
     this.state = {
       btnText: 'Off',
-      flag: true,
+      activated: true,
     };
   }
 
   toggleBtnText = () => {
     this.setState({
-      flag: !this.state.flag,
-      btnText: !this.state.flag ? 'Off' : 'On',
+      activated: !this.state.activated,
+      btnText: !this.state.activated ? 'Off' : 'On',
     });
   };
 
