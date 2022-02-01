@@ -6,14 +6,14 @@ class Toggler extends React.Component {
 
     this.state = {
       btnText: 'Off',
-      active: false,
+      flag: false,
     };
   }
 
   handleClick = () => {
     this.setState({
-      active: !this.state.active,
-      btnText: !this.state.active ? 'On' : 'Off',
+      flag: !this.state.flag,
+      btnText: !this.state.flag ? 'On' : 'Off',
     });
   };
 
