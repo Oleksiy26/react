@@ -6,7 +6,7 @@ class Toggler extends React.Component {
 
     this.state = {
       btnText: 'Off',
-      flag: false,
+      flag: true,
     };
   }
 
