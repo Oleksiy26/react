@@ -9,7 +9,7 @@ class Toggler extends React.Component {
     };
   }
 
-  toggleBtnText = () => {
+  handleClick = () => {
     this.setState({
       flag: !this.state.flag,
       btnText: !this.state.flag ? 'On' : 'Off',
@@ -18,7 +18,7 @@ class Toggler extends React.Component {
 
   render() {
     return (
-      <button className="toggler" onClick={this.toggleBtnText}>
+      <button className="toggler" onClick={this.handleClick}>
         {this.state.btnText}
       </button>
     );
