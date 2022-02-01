@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
 class Toggler extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       btnText: 'Off',
-      flag: true,
     };
   }
 
