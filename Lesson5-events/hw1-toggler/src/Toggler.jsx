@@ -3,24 +3,23 @@ import React, { Component } from 'react';
 class Toggler extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      value: 'Off',
-      active: false,
+      btnText: 'Off',
+      flag: true,
     };
   }
 
-  handleClick = () => {
+  toggleBtnText = () => {
     this.setState({
-      active: !this.state.active,
-      value: !this.state.active ? 'On' : 'Off',
+      flag: !this.state.flag,
+      btnText: !this.state.flag ? 'On' : 'Off',
     });
   };
 
   render() {
     return (
-      <button className="toggler" onClick={this.handleClick}>
-        {this.state.value}
+      <button className="toggler" onClick={this.toggleBtnText}>
+        {this.state.btnText}
       </button>
     );
   }
