@@ -5,7 +5,7 @@ class Toggler extends React.Component {
     super(props);
 
     this.state = {
-      value: 'Off',
+      btnText: 'Off',
       active: false,
     };
   }
@@ -13,14 +13,14 @@ class Toggler extends React.Component {
   handleClick = () => {
     this.setState({
       active: !this.state.active,
-      value: !this.state.active ? 'On' : 'Off',
+      btnText: !this.state.active ? 'On' : 'Off',
     });
   };
 
   render() {
     return (
       <button className="toggler" onClick={this.handleClick}>
-        {this.state.value}
+        {this.state.btnText}
       </button>
     );
   }
