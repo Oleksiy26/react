@@ -5,7 +5,7 @@ import Offline from './Offline.jsx';
 class Status extends Component {
   constructor(props) {
     super(props);
-    this.state = { isOnline: false };
+    this.state = { isOnline: props.isOnline };
   }
 
   handleReconnect = () => {
