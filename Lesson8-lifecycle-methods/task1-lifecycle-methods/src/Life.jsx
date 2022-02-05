@@ -3,7 +3,7 @@ import React from 'react';
 class Life extends React.Component {
   constructor(props) {
     super(props);
-    console.log('constructor:good place to create state');
+    console.log('constructor: good place to create state');
   }
 
   componentDidMount() {
@@ -15,7 +15,7 @@ class Life extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log('componentDidUpdate(prevProps, prevState): some updates basedon new props');
+    console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
   }
 
   componentWillUnmount() {
