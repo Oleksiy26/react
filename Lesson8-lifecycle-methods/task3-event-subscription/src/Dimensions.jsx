@@ -26,7 +26,7 @@ class Dimensions extends React.Component {
       width,
       height,
     });
-    document.title = `${this.state.width} X ${this.state.height}`;
+    document.title = `${this.state.height}x${this.state.width}`;
   };
 
   render() {
