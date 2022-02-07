@@ -3,28 +3,38 @@ import React from 'react';
 class ConnectionStatus extends React.Component {
   state = {
     status: 'online',
+    flag: true,
   };
 
   componentDidMount() {
-    window.addEventListener('online', this.onStatusChange);
-    window.addEventListener('offline', this.onStatusChange);
+    window.addEventListener('online', this.onStatusOnline);
+    window.addEventListener('offline', this.onStatusOffline);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('online', this.onStatusChange);
-    window.removeEventListener('offline', this.onStatusChange);
+    window.removeEventListener('online', this.onStatusOnline);
+    window.removeEventListener('offline', this.onStatusOffline);
   }
 
-  onStatusChange = () => {
-    const borderStyle = document.querySelector('.status');
-    borderStyle.classList.toggle('status_offline');
+  onStatusOffline = () => {
     this.setState({
-      status: navigator.onLine ? 'online' : 'offline',
+      status: 'offline',
+      flag: false,
+    });
+  };
+
+  onStatusOnline = () => {
+    this.setState({
+      status: 'online',
+      flag: true,
     });
   };
 
   render() {
-    return <div className="status ">{this.state.status}</div>;
+    if (this.state.flag) {
+      return <div className="status ">{this.state.status}</div>;
+    }
+    return <div className="status status_offline">{this.state.status}</div>;
   }
 }
 
