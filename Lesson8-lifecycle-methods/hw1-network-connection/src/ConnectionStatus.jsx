@@ -2,7 +2,7 @@ import React from 'react';
 
 class ConnectionStatus extends React.Component {
   state = {
-    status: 'Online',
+    status: 'online',
   };
 
   componentDidMount() {
@@ -16,13 +16,13 @@ class ConnectionStatus extends React.Component {
   }
 
   onStatusChange = () => {
-    const condition = navigator.onLine ? 'online' : 'offline';
     const borderStyle = document.querySelector('.status');
     borderStyle.classList.toggle('status_offline');
     this.setState({
-      status: condition[0].toUpperCase() + condition.slice(1),
+      status: navigator.onLine ? 'online' : 'offline',
     });
   };
+  // condition[0].toUpperCase() + condition.slice(1),
 
   render() {
     return <div className="status ">{this.state.status}</div>;
