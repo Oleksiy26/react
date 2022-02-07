@@ -22,7 +22,6 @@ class ConnectionStatus extends React.Component {
       status: navigator.onLine ? 'online' : 'offline',
     });
   };
-  // condition[0].toUpperCase() + condition.slice(1),
 
   render() {
     return <div className="status ">{this.state.status}</div>;
