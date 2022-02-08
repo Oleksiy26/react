@@ -7,7 +7,7 @@ class UserForm extends React.Component {
       (acc, [name, value]) => ({ ...acc, [name]: value }),
       {},
     );
-    this.props.method(formData);
+    this.props.createUser(formData);
   };
 
   setRef = node => {
