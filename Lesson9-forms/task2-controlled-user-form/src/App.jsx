@@ -7,7 +7,7 @@ class App extends React.Component {
   };
 
   render() {
-    return <UserForm createUser={this.createUser} />;
+    return <UserForm onSubmit={this.createUser} />;
   }
 }
 export default App;
