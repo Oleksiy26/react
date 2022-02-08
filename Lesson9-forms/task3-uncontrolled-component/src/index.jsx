@@ -5,11 +5,4 @@ import App from './App.jsx';
 
 const rootElement = document.querySelector('#root');
 
-const user = {
-  name: 'Petro',
-  student: 'yes',
-  occupation: 'Berlin',
-  about: 'fuck you',
-};
-
-ReactDOM.render(<App userInfo={user} />, rootElement);
+ReactDOM.render(<App />, rootElement);
