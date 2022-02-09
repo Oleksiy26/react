@@ -12,7 +12,7 @@ class UsersList extends React.Component {
     };
   }
 
-  handleChange = inputValue => {
+  onChange = inputValue => {
     this.setState({
       value: inputValue,
     });
@@ -30,11 +30,7 @@ class UsersList extends React.Component {
 
     return (
       <div>
-        <Filter
-          filterText={this.state.value}
-          count={usersList.length}
-          onChange={this.handleChange}
-        />
+        <Filter filterText={this.state.value} count={usersList.length} onChange={this.onChange} />
         <ul className="users">
           {usersList.map(user => (
             <User key={user.id} {...user} />
