@@ -8,13 +8,14 @@ class UsersList extends React.Component {
 
     this.state = {
       value: '',
-      count: null,
+      count: '',
     };
   }
 
   onChange = inputValue => {
     this.setState({
       value: inputValue,
+      count: this.state.count,
     });
   };
 
@@ -30,7 +31,11 @@ class UsersList extends React.Component {
 
     return (
       <div>
-        <Filter filterText={this.state.value} count={usersList.length} onChange={this.onChange} />
+        <Filter
+          filterText={this.state.value}
+          count={usersList.length === 0 ? this.state.count : usersList.length}
+          onChange={this.onChange}
+        />
         <ul className="users">
           {usersList.map(user => (
             <User key={user.id} {...user} />
