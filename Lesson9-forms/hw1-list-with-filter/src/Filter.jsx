@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Filter = props => {
-  const { onChange, filterText, count } = props;
+const Filter = ({ onChange, filterText, count }) => {
   const onInputChange = event => {
     event.preventDefault();
     onChange(event.target.value);
