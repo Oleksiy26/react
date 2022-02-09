@@ -3,14 +3,10 @@ import User from './User.jsx';
 import Filter from './Filter.jsx';
 
 class UsersList extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      value: '',
-      count: '',
-    };
-  }
+  state = {
+    value: '',
+    count: '',
+  };
 
   handleInputChange = event => {
     this.setState({
