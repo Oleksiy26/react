@@ -12,9 +12,9 @@ class UsersList extends React.Component {
     };
   }
 
-  handleInputChange = inputValue => {
+  handleInputChange = event => {
     this.setState({
-      value: inputValue,
+      value: event.target.value,
       count: this.state.count,
     });
   };
