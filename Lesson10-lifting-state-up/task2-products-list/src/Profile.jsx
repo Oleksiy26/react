@@ -2,7 +2,7 @@ import React from 'react';
 import UserForm from './UserForm.jsx';
 
 const Profile = ({ userData, handleChange }) => (
-  <div className="coloumn">
+  <div className="column">
     <UserForm userData={userData} handleChange={handleChange} />
   </div>
 );
