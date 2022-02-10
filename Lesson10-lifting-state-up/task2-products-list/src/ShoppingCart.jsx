@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import CartTitle from './CartTitle.jsx';
 import ProductsList from './ProductsList.jsx';
 
-class ShoppingCart extends React.Component {
+class ShoppingCart extends Component {
   state = {
     cartItems: [
       { id: '1', name: 'iPhone 11', price: 999 },
@@ -12,10 +12,9 @@ class ShoppingCart extends React.Component {
 
   render() {
     const count = this.state.cartItems.length;
-    console.log(this.props);
     return (
       <div className="column">
-        <CartTitle userName={this.props.userName.firstName} count={count} />
+        <CartTitle userName={this.props.userName} count={count} />
         <ProductsList cartItems={this.state.cartItems} />
       </div>
     );
