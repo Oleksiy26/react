@@ -1,20 +1,38 @@
 import React from 'react';
 
-class UserProfile extends React.Component {
-  render() {
-    if (!this.props.userData) {
-      return null;
-    }
-    const { name, location, avatar_url: avatarUrl } = this.props.userData;
-    return (
-      <div className="user">
-        <img alt="User Avatar" src={avatarUrl} className="user__avatar" />
-        <div className="user__info">
-          <span className="user__name">{name}</span>
-          <span className="user__location">{location}</span>
-        </div>
-      </div>
-    );
+// class UserProfile extends React.Component {
+//   render() {
+//     if (!this.props.userData) {
+//       return null;
+//     }
+//     const { name, location, avatar_url: avatarUrl } = this.props.userData;
+//     return (
+//       <div className="user">
+//         <img alt="User Avatar" src={avatarUrl} className="user__avatar" />
+//         <div className="user__info">
+//           <span className="user__name">{name}</span>
+//           <span className="user__location">{location}</span>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
+// export default UserProfile;
+
+const UserProfile = ({ userData }) => {
+  if (!userData) {
+    return null;
   }
-}
+  const { name, location, avatar_url: avatarUrl } = userData;
+
+  return (
+    <div className="user">
+      <img alt="User Avatar" src={avatarUrl} className="user__avatar" />
+      <div className="user__info">
+        <span className="user__name">{name}</span>
+        <span className="user__location">{location}</span>
+      </div>
+    </div>
+  );
+};
 export default UserProfile;
