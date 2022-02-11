@@ -14,12 +14,11 @@ const Dialog = ({ title, children, isOpen, onClose }) => {
           +
         </button>
       </div>
-      <div className="dialog__content">
-        <p>{children}</p>
-      </div>
+      <div className="dialog__content">{children}</div>
     </div>
   );
 };
+
 Dialog.propTypes = {
   isOpen: PropTypes.bool,
   children: PropTypes.element,
