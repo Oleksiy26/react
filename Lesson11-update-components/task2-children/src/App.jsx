@@ -1,7 +1,6 @@
 import React from 'react';
 import Dialog from './Dialog.jsx';
 
-
 class App extends React.Component {
   state = {
     isOpen: false,
