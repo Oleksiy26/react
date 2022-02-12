@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+
 import PropTypes from 'prop-types';
 
 const Expand = ({ title, children, rotation, onExpand, isVisible }) => (
@@ -8,7 +8,7 @@ const Expand = ({ title, children, rotation, onExpand, isVisible }) => (
     <div className="expand__header">
       <span className="expand__title">{title}</span>
       <button className="expand__toggle-btn" onClick={onExpand}>
-        <FontAwesomeIcon icon={solid('chevron-up')} rotation={rotation} />
+        <FontAwesomeIcon icon="fas fa-chevron-up" rotation={rotation} />
       </button>
     </div>
     {isVisible ? (
