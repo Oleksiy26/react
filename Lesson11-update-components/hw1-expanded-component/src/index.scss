@@ -23,6 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 400px;
+  min-height: 180px;
 
   &__header {
     display: flex;

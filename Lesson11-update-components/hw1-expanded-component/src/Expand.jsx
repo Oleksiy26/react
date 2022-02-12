@@ -1,48 +1,32 @@
 import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 
-class Expand extends React.Component {
-  state = {
-    isVisible: false,
-    condition: <i className="fas fa-chevron-down"></i>,
-  };
+const Expand = ({ title, children, rotation, onExpand, isVisible }) => (
+  <div className="expand border">
+    <div className="expand__header">
+      <span className="expand__title">{title}</span>
+      <button className="expand__toggle-btn" onClick={onExpand}>
+        {rotation}
+      </button>
+    </div>
+    {isVisible ? (
+      <div className="expand__content">{children}</div>
+    ) : (
+      <div className="expand__content"></div>
+    )}
+  </div>
+);
 
-  toggleExpandText = () => {
-    this.setState({
-      isVisible: !this.state.isVisible,
-      condition: !this.state.isVisible ? (
-        <i className="fas fa-chevron-up"></i>
-      ) : (
-        <i className="fas fa-chevron-down"></i>
-      ),
-    });
-  };
+Expand.propTypes = {
+  isVisible: PropTypes.bool,
+  children: PropTypes.element,
+  title: PropTypes.string,
+  onExpand: PropTypes.func.isRequired,
+};
 
-  render() {
-    const { isVisible, condition } = this.state;
-    return (
-      <div className="app">
-        <div className="expand border">
-          <div className="expand__header">
-            <span className="expand__title">{this.props.title}</span>
-            <button className="expand__toggle-btn" onClick={this.toggleExpandText}>
-              {condition}
-            </button>
-          </div>
-          {isVisible ? (
-            <div className="expand__content">
-              <p>
-                Hooks are a new addition in React 16.8. They let you use state and other React
-                features without writing a class.
-              </p>
-            </div>
-          ) : (
-            <div className="expand__content"></div>
-          )}
-        </div>
-      </div>
-    );
-  }
-}
+Expand.defaultProps = {
+  isVisible: false,
+  title: '',
+};
 
 export default Expand;
