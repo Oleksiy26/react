@@ -4,31 +4,29 @@ import React from 'react';
 class Expand extends React.Component {
   state = {
     isVisible: false,
+    condition: <i className="fas fa-chevron-down"></i>,
   };
 
-  toggleExpandText = e => {
-    const arrowDirection = e.target;
-
-    if (arrowDirection.getAttribute('data-icon') === 'chevron-down') {
-      arrowDirection.setAttribute('data-icon', 'chevron-up');
-    } else {
-      arrowDirection.setAttribute('data-icon', 'chevron-down');
-    }
-
+  toggleExpandText = () => {
     this.setState({
       isVisible: !this.state.isVisible,
+      condition: !this.state.isVisible ? (
+        <i className="fas fa-chevron-up"></i>
+      ) : (
+        <i className="fas fa-chevron-down"></i>
+      ),
     });
   };
 
   render() {
-    const { isVisible } = this.state;
+    const { isVisible, condition } = this.state;
     return (
       <div className="app">
         <div className="expand border">
           <div className="expand__header">
             <span className="expand__title">{this.props.title}</span>
             <button className="expand__toggle-btn" onClick={this.toggleExpandText}>
-              <i className="fas fa-chevron-down"></i>
+              {condition}
             </button>
           </div>
           {isVisible ? (
