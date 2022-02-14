@@ -28,4 +28,5 @@ Task.propTypes = {
 Task.defaultProps = {
   text: '',
 };
+
 export default Task;
