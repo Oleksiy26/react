@@ -3,7 +3,7 @@ const baseUrl = 'https://61dcca24591c3a0017e1aa84.mockapi.io/api/v1/tasks';
 export const createTask = taskData =>
   fetch(baseUrl, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json;charset=utf-8' },
     body: JSON.stringify(taskData),
   }).then(response => {
     if (!response.ok) {
