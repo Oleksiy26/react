@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Task = ({ id, done, text, onChange, onDelate }) => {
@@ -14,5 +15,17 @@ const Task = ({ id, done, text, onChange, onDelate }) => {
       <button className="list-item__delete-btn" onClick={() => onDelate(id)}></button>
     </li>
   );
+};
+
+Task.propTypes = {
+  id: PropTypes.string.isRequired,
+  done: PropTypes.bool.isRequired,
+  text: PropTypes.string,
+  onDelate: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
+
+Task.defaultProps = {
+  text: '',
 };
 export default Task;

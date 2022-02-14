@@ -4,7 +4,7 @@ export const createTask = async taskData => {
   const response = await fetch(baseUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(taskData),
   });
@@ -24,7 +24,7 @@ export const updateTask = async (taskId, taskData) => {
   const response = await fetch(`${baseUrl}/${taskId}`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(taskData),
   });
