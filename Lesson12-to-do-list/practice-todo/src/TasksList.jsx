@@ -21,6 +21,7 @@ class TasksList extends React.Component {
       text,
       done: false,
     };
+
     createTask(newTask).then(() => this.fetchTasks());
   };
 
