@@ -1,17 +1,15 @@
 const baseUrl = 'https://61dcca24591c3a0017e1aa84.mockapi.io/api/v1/tasks';
 
-export const createTask = async taskData => {
-  const response = await fetch(baseUrl, {
+export const createTask = taskData =>
+  fetch(baseUrl, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(taskData),
+  }).then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to create task');
+    }
   });
-  if (!response.ok) {
-    throw new Error('Faild to create task');
-  }
-};
 
 export const fetchTasksList = async () => {
   const res = await fetch(baseUrl);
