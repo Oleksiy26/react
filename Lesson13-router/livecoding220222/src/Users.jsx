@@ -18,7 +18,9 @@ function Users({ match }) {
         <Route exact path={match.url}>
           <span>Select a user please</span>
         </Route>
-        <Route path={`${match.url}/:userId`} component={User}></Route>
+        <Route path={`${match.url}/:userId`}>
+          <User />
+        </Route>
       </Switch>
     </div>
   );
